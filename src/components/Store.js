@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import Product from './Product';
+import Layout from './Layout';
 import './Store.css';
 
 function Store() {
@@ -8,9 +9,11 @@ function Store() {
   const { products } = useContext(CartContext);
 
   return (
-    <div className="products-grid">
-      {products.map(product => <Product key={product.id} data={product} />)}
-    </div>
+    <Layout>
+      <div className="products-grid">
+        {products.map(product => <Product key={product.id} data={product} />)}
+      </div>
+    </Layout>
   )
 }
 
