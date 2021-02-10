@@ -1,0 +1,11 @@
+.products-grid > div {
+  width: 100%;
+  background: white;
+  border: 1px solid rgb(211, 211, 211);
+}
+
+.products-grid > div img {
+  width: 225px;
+  margin: 7% auto;
+  display: block;
+}

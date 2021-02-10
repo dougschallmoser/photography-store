@@ -1,0 +1,7 @@
+.products-grid {
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2%;
+}
