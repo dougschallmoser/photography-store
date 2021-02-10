@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Store from '../components/Store';
 import Cart from '../components/Cart';
 import Error from '../components/Error';
+import './Global.css';
 
 function Routes() {
   return (
