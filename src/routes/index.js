@@ -10,6 +10,7 @@ function Routes() {
     <Router>
       <Switch>
         <Route exact path="/" component={Store} />
+        <Route exact path="/store" component={Store} />
         <Route path="/cart" component={Cart} />
         <Route path="*" component={Error} />
       </Switch>
