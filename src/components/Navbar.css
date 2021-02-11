@@ -5,6 +5,11 @@ nav {
 nav a {
   margin-right: 20px;
   color: #353535;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 nav ul {

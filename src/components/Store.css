@@ -2,6 +2,6 @@
   margin: 0 auto;
   display: grid;
   width: 80%;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 2%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1% 4%;
 }
