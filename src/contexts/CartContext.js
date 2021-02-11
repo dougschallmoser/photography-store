@@ -1,10 +1,8 @@
 import React, { createContext, useReducer } from 'react';
 import CartReducer from './CartReducer';
-import { products } from '../seed';
 
 const initialState = {
   cartItems: [],
-  products,
   checkout: false
 }
 
