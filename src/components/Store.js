@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../contexts/CartContext';
+import { ProductsContext } from '../contexts/ProductsContext';
 import Product from './Product';
 import Layout from './Layout';
 import './Store.css';
 
 function Store() {
 
-  const { products } = useContext(CartContext);
+  const { products } = useContext(ProductsContext);
 
   return (
     <Layout>
