@@ -21,7 +21,7 @@ const Button = styled.button`
 function Product({ data }) {
 
   const { cartItems } = useContext(CartContext);
-  const { addToCart } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const added = cartItems.some(item => item.id === data.id)
   
@@ -30,7 +30,7 @@ function Product({ data }) {
       <img src={`${data.photo}`} alt={data.name} />
       <h3>{data.name}</h3>
       <h2>${data.price.toFixed(2)}</h2>
-      <Button added={added} onClick={() => addToCart(data)}>
+      <Button added={added} onClick={() => addItem(data)}>
         {added ? "ADD ANOTHER" : "ADD TO CART"}
       </Button>
     </div>

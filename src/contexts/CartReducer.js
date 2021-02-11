@@ -1,6 +1,6 @@
 function CartReducer(state, action) {
   switch (action.type) {
-    case 'ADD_TO_CART':
+    case 'ADD_ITEM':
       return {
         ...state, 
         cartItems: [...state.cartItems, action.payload]
