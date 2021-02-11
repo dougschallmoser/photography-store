@@ -1,7 +1,12 @@
 .products-grid {
-  margin: 0 auto;
+  margin: 1% auto 5% auto;
   display: grid;
   width: 80%;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1% 4%;
+}
+
+.products-length {
+  margin: 0 auto;
+  width: 80%;
 }
