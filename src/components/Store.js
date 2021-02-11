@@ -10,6 +10,7 @@ function Store() {
 
   return (
     <Layout>
+      <div className="products-length">({products.length}) Products Available</div>
       <div className="products-grid">
         {products.map(product => <Product key={product.id} data={product} />)}
       </div>
