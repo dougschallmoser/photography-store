@@ -3,6 +3,7 @@ import CartReducer from './CartReducer';
 
 const initialState = {
   cartItems: [],
+  cartCount: 0,
   checkout: false
 }
 
