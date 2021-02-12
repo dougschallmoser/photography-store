@@ -15,8 +15,10 @@ function Cart() {
           <div className="cart-container">
             <CartItems />
             <div className="cart-total">
-              <p>Total Items: {cartCount}</p>
-              <p>Total Cost: {totalCost}</p>
+              <p>Total Items:</p>
+              <h2>{cartCount}</h2>
+              <p>Total Cost:</p>
+              <h2>${totalCost}</h2>
             </div>
           </div>
           : <h3>Your shopping cart is empty.</h3>
