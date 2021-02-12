@@ -2,3 +2,7 @@ body {
   background: white;
   font-family: 'Josefin Sans', sans-serif;
 }
+
+.main-container {
+  margin-top: 40px;
+}
