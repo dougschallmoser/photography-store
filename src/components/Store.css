@@ -15,3 +15,11 @@ h1 {
   text-align: center;
   margin-bottom: 40px;
 }
+
+@media only screen and (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    grid-gap: 1%;
+  }
+}
