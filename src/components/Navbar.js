@@ -10,7 +10,7 @@ const Span = styled.span`
 
 function Navbar() {
 
-  const { cartItems } = useContext(CartContext);
+  const { cartCount } = useContext(CartContext);
 
   return (
     <nav>
@@ -19,7 +19,7 @@ function Navbar() {
         <li>
           <img src={process.env.PUBLIC_URL + '/images/shopping_cart.svg'} alt="cart icon"/>
           <Link to="/cart">
-            Cart (<Span empty={!cartItems.length}>{cartItems.length}</Span>)
+            Cart (<Span empty={cartCount === 0}>{cartCount}</Span>)
           </Link>
         </li>
       </ul>
