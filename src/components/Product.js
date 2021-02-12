@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import './Product.css';
 import { CartContext } from '../contexts/CartContext';
 import styled from 'styled-components';
@@ -23,7 +23,7 @@ function Product({ data }) {
   const { cartItems } = useContext(CartContext);
   const { addItem } = useContext(CartContext);
 
-  const added = cartItems.some(item => item.id === data.id)
+  const added = useMemo(() => cartItems.some(item => item.id === data.id), [cartItems, data])
   
   return (
     <div>
