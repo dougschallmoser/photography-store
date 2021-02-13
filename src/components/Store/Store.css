@@ -1,0 +1,25 @@
+.products-grid {
+  margin: 1% auto 5% auto;
+  display: grid;
+  width: 75%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2% 5%;
+}
+
+.products-length {
+  margin: 0 auto;
+  width: 75%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    grid-gap: 1%;
+  }
+}
