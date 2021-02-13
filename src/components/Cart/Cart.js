@@ -10,7 +10,7 @@ function Cart() {
 
   return (
     <Layout>
-      <h1>Cart</h1>
+      <h1>CART</h1>
         {cartCount > 0 ? 
           <div className="cart-container">
             <CartItems />
