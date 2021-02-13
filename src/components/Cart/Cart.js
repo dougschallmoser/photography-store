@@ -6,7 +6,7 @@ import { CartContext } from '../../contexts/CartContext';
 
 function Cart() {
 
-  const { cartCount, totalCost } = useContext(CartContext);
+  const { cartCount, cartCost } = useContext(CartContext);
 
   return (
     <Layout>
@@ -18,7 +18,7 @@ function Cart() {
               <p>Total Items:</p>
               <h2>{cartCount}</h2>
               <p>Total Cost:</p>
-              <h2>${totalCost}</h2>
+              <h2>${cartCost}</h2>
             </div>
           </div>
           : <h3>Your shopping cart is empty.</h3>
