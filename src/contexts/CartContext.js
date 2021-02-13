@@ -18,11 +18,36 @@ export const CartContextProvider = ({ children }) => {
       payload: item
     })
   }
+  
+  function removeItem(item) {
+    dispatch({
+      type: 'REMOVE_ITEM',
+      payload: item
+    })
+  }
+
+  function increaseQty(item) {
+    dispatch({
+      type: 'INCREASE_QTY',
+      payload: item
+    })
+  }
+
+  function decreaseQty(item) {
+    dispatch({
+      type: 'DECREASE_QTY',
+      payload: item
+    })
+  }
+
 
   return (
     <CartContext.Provider value={{
       ...state,
-      addItem
+      addItem,
+      removeItem,
+      increaseQty,
+      decreaseQty
     }}>
       {children}
     </CartContext.Provider>
