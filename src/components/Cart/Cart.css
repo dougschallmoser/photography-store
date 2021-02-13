@@ -1,20 +1,101 @@
 .cart-container {
+  width: 65%;
   display: flex;
   text-align: center;
+  margin: 0 auto;
 }
 
 .cart-container .cart-total {
-  flex: 1;
+  flex: 0.3;
 }
 
-.cart-items {
-  flex: 1.5
+.cart-container .cart-items {
+  flex: 2;
 }
 
 .cart-message {
   text-align: center;
 }
 
+.cart-total {
+  text-align: left;
+  border: 1px solid rgb(223, 223, 223);
+  padding: 2%;
+}
+
+p {
+  margin-bottom: 5%;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
 h3 {
   text-align: center;
+  font-weight: 400;
+}
+
+.product-image-cart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.cart-item-container {
+  display: flex;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-item-container div {
+  flex: 1;
+}
+
+.cart-item-container div:nth-child(2) h3,
+.cart-item-container div:nth-child(2) p {
+  text-align: left;
+}
+
+.btn-qty {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.btn-qty:focus {
+  outline: none;
+}
+
+.increase {
+  background: rgb(110, 223, 170);
+}
+
+.increase:hover {
+  background: rgb(0, 207, 111);
+}
+
+.decrease {
+  background: rgb(226, 110, 110);
+}
+
+.decrease:hover {
+  background: rgb(207, 0, 0);
+}
+
+.trash {
+  background: rgb(238, 238, 238)
+}
+
+.trash:hover {
+  background: rgb(223, 223, 223);
 }
