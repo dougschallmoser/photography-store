@@ -10,7 +10,7 @@ function tallyCart(items) {
 function CartReducer(state, action) {
   switch (action.type) {
     case 'ADD_ITEM':
-      const item = state.cartItems.find(item => item.id === action.payload.id)
+      const item = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
 
       if (!item) {
         state.cartItems.push({...action.payload, quantity: 1})
