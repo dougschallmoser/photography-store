@@ -1,9 +1,9 @@
-function sumItems(items) {
+function tallyCart(items) {
   const cartCount = items.reduce((tot, item) => tot + item.quantity, 0)
-  const totalCost = items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
+  const cartCost = items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
   return {
     cartCount,
-    totalCost
+    cartCost
   }
 }
 
@@ -20,7 +20,31 @@ function CartReducer(state, action) {
 
       return {
         ...state,
-        ...sumItems(state.cartItems),
+        ...tallyCart(state.cartItems),
+        cartItems: [...state.cartItems]
+      }
+    case 'REMOVE_ITEM':
+      const updatedCart = state.cartItems.filter(item => item.id !== action.payload.id)
+
+      return {
+        ...state,
+        ...tallyCart(updatedCart),
+        cartItems: [...updatedCart]
+      }
+    case 'INCREASE_QTY':
+      state.cartItems.find(item => item.id === action.payload.id).quantity++
+
+      return {
+        ...state,
+        ...tallyCart(state.cartItems),
+        cartItems: [...state.cartItems]
+      }
+    case 'DECREASE_QTY':
+      state.cartItems.find(item => item.id === action.payload.id).quantity--
+
+      return {
+        ...state,
+        ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
     default: 
