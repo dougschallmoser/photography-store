@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 
 function CartItem({ item }) {
+
+  const { increaseQty, decreaseQty, removeItem } = useContext(CartContext);
+  
   return (
     <div className="cart-item-container">
       <div>
@@ -18,9 +22,9 @@ function CartItem({ item }) {
         <p>Qty: {item.quantity}</p>
       </div>
       <div>
-        <button className="btn-qty increase">&#43;</button>
-        <button className="btn-qty decrease">&#8722;</button>
-        <button className="btn-qty trash">
+        <button onClick={() => increaseQty(item)} className="btn-qty increase">&#43;</button>
+        {item.quantity > 1 && <button onClick={() => decreaseQty(item)} className="btn-qty decrease">&#8722;</button>}
+        <button onClick={() => removeItem(item)} className="btn-qty trash">
           <img src={process.env.PUBLIC_URL + '/images/trash.svg'} alt="trash can"/>
         </button>
       </div>
