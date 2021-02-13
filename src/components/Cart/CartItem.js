@@ -18,8 +18,11 @@ function CartItem({ item }) {
         <p>Qty: {item.quantity}</p>
       </div>
       <div>
-        <button className="btn-increase-qty">&#43;</button>
-        <button className="btn-decrease-qty">&#8722;</button>
+        <button className="btn-qty increase">&#43;</button>
+        <button className="btn-qty decrease">&#8722;</button>
+        <button className="btn-qty trash">
+          <img src={process.env.PUBLIC_URL + '/images/trash.svg'} alt="trash can"/>
+        </button>
       </div>
     </div>
   )
