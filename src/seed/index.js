@@ -46,5 +46,17 @@ export const products = [
     name: "Joshua Tree Stars",
     price: 61.00,
     photo: "/images/8.jpg"
+  },
+  {
+    id: 9,
+    name: "Autumn River",
+    price: 42.00,
+    photo: "/images/9.jpg"
+  },
+  {
+    id: 10,
+    name: "Purple Clouds",
+    price: 80.00,
+    photo: "/images/10.jpg"
   }
 ];
