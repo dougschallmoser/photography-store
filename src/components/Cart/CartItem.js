@@ -4,6 +4,7 @@ import { CartContext } from '../../contexts/CartContext';
 function CartItem({ item }) {
 
   const { increaseQty, decreaseQty, removeItem } = useContext(CartContext);
+  console.log(item)
   
   return (
     <div className="cart-item-container">
@@ -16,6 +17,7 @@ function CartItem({ item }) {
       </div>
       <div>
         <h3>{item.name}</h3>
+        <h4>{item.size}</h4>
         <p>Price ${item.price.toFixed(2)}</p>
       </div>
       <div>
