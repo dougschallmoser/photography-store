@@ -20,8 +20,7 @@ const Button = styled.button`
 
 function Product({ data }) {
 
-  const { cartItems } = useContext(CartContext);
-  const { addItem } = useContext(CartContext);
+  const { cartItems, addItem } = useContext(CartContext);
   const [open, setOpen] = useState(false)
 
   const added = useMemo(() => cartItems.some(item => item.id === data.id), [cartItems, data])
