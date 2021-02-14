@@ -35,7 +35,7 @@ function Product({ data }) {
   const [open, setOpen] = useState(false)
   const [size, setSize] = useState('5x7')
 
-  const added = useMemo(() => cartItems.some(item => item.id === data.id), [cartItems, data])
+  const added = useMemo(() => cartItems.some(item => item.id === data.id && item.size === size), [cartItems, data, size])
 
   const handleSelect = (event) => {
     setSize(event.target.value)
@@ -43,8 +43,7 @@ function Product({ data }) {
 
   const handleAddItem = () => {
     const modifiedData = Object.assign({}, data)
-    const price = modifiedData.price[size]
-    modifiedData.price = price
+    modifiedData.price = modifiedData.price[size]
     modifiedData.size = size
     addItem(modifiedData)
   }
