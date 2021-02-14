@@ -5,8 +5,10 @@ import './App.css';
 function App() {
   return (
     <Layout>
-      <h2>WELCOME TO THE</h2>
-      <h1><span>PHOTOGRAPHY STORE</span></h1>
+      <h2>WELCOME TO MY PHOTOGRAPHY STORE</h2>
+      <div id="splash-image">
+        <img src="/images/splash.jpg" alt="Mountain" />
+      </div>
     </Layout>
   )
 }
