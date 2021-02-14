@@ -4,7 +4,6 @@ import { CartContext } from '../../contexts/CartContext';
 function CartItem({ item }) {
 
   const { increaseQty, decreaseQty, removeItem } = useContext(CartContext);
-  console.log(item)
   
   return (
     <div className="cart-item-container">
