@@ -24,12 +24,13 @@ function CartReducer(state, action) {
         cartItems: [...state.cartItems]
       }
     case 'REMOVE_ITEM':
-      const updatedCart = state.cartItems.filter(item => item.id !== action.payload.id)
-
+      const removedItem = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
+      state.cartItems.splice(state.cartItems.indexOf(removedItem), 1)
+      
       return {
         ...state,
-        ...tallyCart(updatedCart),
-        cartItems: [...updatedCart]
+        ...tallyCart(state.cartItems),
+        cartItems: [...state.cartItems]
       }
     case 'INCREASE_QTY':
       state.cartItems.find(item => item.id === action.payload.id).quantity++
