@@ -21,6 +21,16 @@ nav ul {
   text-align: center;
 }
 
+nav ul:first-child {
+  font-size: 50px;
+  font-weight: 200;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #6969694A;
+  letter-spacing: 0.4em;
+  margin-top: 20px;
+  margin-bottom: 26px;
+}
+
 nav ul li {
   display: inline-block;
 }

@@ -1,3 +1,9 @@
-span {
-  font-family: 'Pacifico', cursive;
+#splash-image {
+  width: 100vw;
+  height: 60vh;
+  overflow: hidden;
+}
+
+#splash-image img {
+  width: 100vw;
 }
