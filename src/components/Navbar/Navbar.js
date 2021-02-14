@@ -15,6 +15,9 @@ function Navbar() {
   return (
     <nav>
       <ul>
+        <li>DOUG SCHALLMOSER</li>
+      </ul>
+      <ul>
         <li><Link to="/">MAIN</Link></li>
         <li><Link to="/store">STORE</Link></li>
         <li>
