@@ -4,7 +4,7 @@ import './Cart.css';
 
 function CartSummary() {
 
-  const { cartCount, cartCost } = useContext(CartContext);
+  const { cartCount, cartCost, clearCart } = useContext(CartContext);
 
   return (
     <div className="cart-total">
@@ -12,6 +12,8 @@ function CartSummary() {
       <h2>{cartCount}</h2>
       <p>Total Cost:</p>
       <h2>${cartCost}</h2>
+      <button className="checkout-btn">CHECKOUT</button>
+      <div onClick={() => clearCart()} id="clear-cart">CLEAR CART</div>
     </div>
   )
 }
