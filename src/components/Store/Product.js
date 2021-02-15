@@ -58,7 +58,7 @@ function Product({ data }) {
       }
       {!imgLoaded && <div className="loader" />}
       <img
-        style={ imgLoaded ? {} : {display: "none"} }
+        style={ imgLoaded ? {} : { visibility: "hidden" } }
         className="product-image"
         onClick={() => setOpen(!open)}
         src={`${data.photo}`}
