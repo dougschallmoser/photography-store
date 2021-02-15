@@ -16,7 +16,7 @@ const asyncer = (dispatch: any, state: ApplicationState) => (action: any) =>
 export const CartContextProvider = ({ children }: ChildrenProps ) => {
   const [state, dispatchBase] = useReducer(CartReducer, initialState)
 
-  const dispatch = React.useCallback(asyncer(dispatchBase, state), [])
+  const dispatch = asyncer(dispatchBase, state)
 
   function addItem(item: Item) {
     dispatch({
