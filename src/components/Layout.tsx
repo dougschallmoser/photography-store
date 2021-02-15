@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './Navbar';
+import { ChildrenProps } from '../types';
 
-function Layout({ children }) {
+function Layout({ children }: ChildrenProps) {
   return (
     <>
       <Navbar />

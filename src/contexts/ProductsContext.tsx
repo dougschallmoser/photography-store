@@ -1,5 +1,6 @@
 import React, { createContext } from 'react';
 import { products } from '../seed';
+import { ChildrenProps } from '../types';
 
 const initialState = {
   products
@@ -7,7 +8,7 @@ const initialState = {
 
 export const ProductsContext = createContext(initialState)
 
-export const ProductsContextProvider = ({ children }) => {
+export const ProductsContextProvider = ({ children }: ChildrenProps ) => {
 
   return (
     <ProductsContext.Provider value={{

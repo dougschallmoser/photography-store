@@ -1,4 +1,6 @@
-function tallyCart(items) {
+import { ApplicationState, StateAction, Item } from '../types';
+
+function tallyCart(items: Item[]) {
   const cartCount = items.reduce((tot, item) => tot + item.quantity, 0)
   const cartCost = items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
   return {
@@ -7,7 +9,7 @@ function tallyCart(items) {
   }
 }
 
-function CartReducer(state, action) {
+function CartReducer(state: ApplicationState, action: StateAction): ApplicationState {
   switch (action.type) {
     case 'ADD_ITEM':
       const item = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
@@ -25,7 +27,7 @@ function CartReducer(state, action) {
       }
     case 'REMOVE_ITEM':
       const removedItem = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
-      state.cartItems.splice(state.cartItems.indexOf(removedItem), 1)
+      state.cartItems.splice(state.cartItems.indexOf(removedItem!), 1)
       
       return {
         ...state,
@@ -33,7 +35,7 @@ function CartReducer(state, action) {
         cartItems: [...state.cartItems]
       }
     case 'INCREASE_QTY':
-      state.cartItems.find(item => item.id === action.payload.id).quantity++
+      state.cartItems.find(item => item.id === action.payload.id)!.quantity++
 
       return {
         ...state,
@@ -41,7 +43,7 @@ function CartReducer(state, action) {
         cartItems: [...state.cartItems]
       }
     case 'DECREASE_QTY':
-      state.cartItems.find(item => item.id === action.payload.id).quantity--
+      state.cartItems.find(item => item.id === action.payload.id)!.quantity--
 
       return {
         ...state,

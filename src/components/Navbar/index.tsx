@@ -4,7 +4,11 @@ import './Navbar.css';
 import { CartContext } from '../../contexts/CartContext';
 import styled from 'styled-components';
 
-const Span = styled.span`
+interface SpanProps {
+  empty: boolean
+}
+
+const Span = styled.span<SpanProps>`
   color: ${props => props.empty ? "black" : "#26ad5e"};
 `
 

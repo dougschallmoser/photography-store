@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
 
-  const [imgLoaded, setImgLoaded] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState<boolean>(false);
 
   return (
     <Layout>
