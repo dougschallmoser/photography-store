@@ -48,6 +48,12 @@ function CartReducer(state, action) {
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
+    case 'CLEAR_CART':
+      return {
+        ...state,
+        ...tallyCart([]),
+        cartItems: []
+      }
     default: 
       return state
   }
