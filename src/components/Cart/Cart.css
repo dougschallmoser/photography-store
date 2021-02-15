@@ -18,7 +18,7 @@
 }
 
 .cart-total {
-  text-align: left;
+  text-align: center;
   border: 1px solid rgb(223, 223, 223);
   padding: 2%;
 }
@@ -116,4 +116,28 @@ h4 {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+.checkout-btn {
+  padding: 8px 18px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.checkout-btn:focus {
+  outline: none;
+}
+
+#clear-cart {
+  margin-top: 12px;
+  text-align: center;
+  color: #9b9b9b;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+#clear-cart:hover {
+  color: red;
 }

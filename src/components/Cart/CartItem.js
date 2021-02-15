@@ -16,8 +16,8 @@ function CartItem({ item }) {
       </div>
       <div>
         <h3>{item.name}</h3>
-        <h4>{item.size}</h4>
-        <p>Price ${item.price.toFixed(2)}</p>
+        <h4>Size: {item.size}</h4>
+        <p>Price: ${item.price.toFixed(2)}</p>
       </div>
       <div>
         <p>Qty: {item.quantity}</p>
