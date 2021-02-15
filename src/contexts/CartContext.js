@@ -40,6 +40,12 @@ export const CartContextProvider = ({ children }) => {
     })
   }
 
+  function clearCart() {
+    dispatch({
+      type: 'CLEAR_CART'
+    })
+  }
+
 
   return (
     <CartContext.Provider value={{
@@ -47,7 +53,8 @@ export const CartContextProvider = ({ children }) => {
       addItem,
       removeItem,
       increaseQty,
-      decreaseQty
+      decreaseQty,
+      clearCart
     }}>
       {children}
     </CartContext.Provider>
