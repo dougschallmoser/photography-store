@@ -19,6 +19,15 @@ export interface Item {
   size: string
 }
 
+export interface ProductItem {
+  id: number,
+  name: string,
+  price: {
+    [key: string]: number
+  },
+  photo: string
+}
+
 export interface ChildrenProps {
   children: React.ReactNode
 }

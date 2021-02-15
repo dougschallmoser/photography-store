@@ -1,9 +1,14 @@
 import React, { useState, useContext, useMemo } from 'react';
 import './Product.css';
 import { CartContext } from '../../contexts/CartContext';
+import { ProductItem } from '../../types';
 import styled from 'styled-components';
 
-const Button = styled.button`
+interface ButtonProps {
+  added: boolean
+}
+
+const Button = styled.button<ButtonProps>`
   padding: 8px 18px;
   background: ${props => props.added ? "white" : "black"};
   color: ${props => props.added ? "black" : "white"};
@@ -29,7 +34,11 @@ const Select = styled.select`
     outline: none;
 `
 
-function Product({ data }) {
+type DataProps = {
+  data: ProductItem
+}
+
+function Product({ data }: DataProps) {
 
   const { cartItems, addItem } = useContext(CartContext);
   const [open, setOpen] = useState(false);
@@ -38,12 +47,12 @@ function Product({ data }) {
 
   const added = useMemo(() => cartItems.some(item => item.id === data.id && item.size === size), [cartItems, data, size])
 
-  const handleSelect = (event) => {
+  const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSize(event.target.value)
   }
 
   const handleAddItem = () => {
-    const modifiedData = Object.assign({}, data)
+    const modifiedData: any = Object.assign({}, data)
     modifiedData.price = modifiedData.price[size]
     modifiedData.size = size
     addItem(modifiedData)
