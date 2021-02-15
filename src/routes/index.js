@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Store from '../components/Store/Store';
-import Cart from '../components/Cart/Cart';
-import App from '../components/App/App';
+import Store from '../components/Store';
+import Cart from '../components/Cart';
+import App from '../components/App';
 import Error from '../components/Error';
 import './Global.css';
 
