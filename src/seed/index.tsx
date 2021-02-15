@@ -128,5 +128,31 @@ export const products = [
       '30x40': 245.00
     },
     photo: "/images/10.jpg"
+  },
+  {
+    id: 11,
+    name: "Mountain Top Sunset",
+    price: {
+      '5x7': 40.00,
+      '8x10': 65.00,
+      '11x14': 90.00,
+      '16x20': 130.00,
+      '24x30': 190.00,
+      '30x40': 240.00
+    },
+    photo: "/images/11.jpg"
+  },
+  {
+    id: 12,
+    name: "Glacier Lake",
+    price: {
+      '5x7': 50.00,
+      '8x10': 75.00,
+      '11x14': 100.00,
+      '16x20': 140.00,
+      '24x30': 200.00,
+      '30x40': 250.00
+    },
+    photo: "/images/12.jpg"
   }
 ];

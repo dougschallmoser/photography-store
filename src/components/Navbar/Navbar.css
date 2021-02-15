@@ -1,6 +1,12 @@
 nav {
+  width: 100vw;
+  display: block;
+  position: fixed;
   margin-bottom: 20px;
+  top: 0;
+  background: white;
   font-weight: 400;
+  z-index: 2;
 }
 
 nav a {
@@ -17,6 +23,7 @@ nav a:hover {
 
 nav ul {
   margin: 0;
+  margin-bottom: 12px;
   padding: 0;
   text-align: center;
 }
