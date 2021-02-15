@@ -32,8 +32,9 @@ const Select = styled.select`
 function Product({ data }) {
 
   const { cartItems, addItem } = useContext(CartContext);
-  const [open, setOpen] = useState(false)
-  const [size, setSize] = useState('5x7')
+  const [open, setOpen] = useState(false);
+  const [size, setSize] = useState('5x7');
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const added = useMemo(() => cartItems.some(item => item.id === data.id && item.size === size), [cartItems, data, size])
 
@@ -55,11 +56,14 @@ function Product({ data }) {
           <img onClick={() => setOpen(!open)} src={`${data.photo}`} alt={data.name} />
         </div>
       }
+      {!imgLoaded && <div className="loader" />}
       <img
+        style={ imgLoaded ? {} : {display: "none"} }
         className="product-image"
         onClick={() => setOpen(!open)}
         src={`${data.photo}`}
         alt={data.name}
+        onLoad={() => setImgLoaded(true)}
       />
       <h3>{data.name}</h3>
       <h2>${data.price[size].toFixed(2)}</h2>
