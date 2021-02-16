@@ -1,0 +1,31 @@
+.FormRow {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.StripeElement {
+  width: 100%;
+  padding: 11px 15px 11px 0;
+}
+
+#checkout-form {
+  background: white;
+  width: 400px;
+  height: 100px;
+}
+
+.pay-btn {
+  padding: 8px 18px;
+  width: 100%;
+  background: rgb(0, 207, 111);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.pay-btn:focus {
+  outline: none;
+}
