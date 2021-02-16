@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import * as EmailValidator from 'email-validator';
+import { CartContext } from '../../contexts/CartContext';
 
 const CARD_OPTIONS = {
   iconStyle: 'solid',
@@ -25,6 +26,8 @@ function CheckoutForm() {
 
   const stripe = useStripe();
   const elements = useElements();
+  const { cartCost } = useContext(CartContext);
+
   const [userInfo, setUserInfo] = useState({
     name: '',
     email: '',
@@ -148,6 +151,7 @@ function CheckoutForm() {
         />
       </div>
       <hr/>
+      Total Cost: ${cartCost}
       <div className="FormRow">
         <CardElement options={CARD_OPTIONS} />
       </div>
