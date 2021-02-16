@@ -12,6 +12,10 @@ function CartSummary() {
     <div className="cart-total">
       <p>Total Items:</p>
       <h2>{cartCount}</h2>
+      <p>Subtotal:</p>
+      <h2>${cartCost}</h2>
+      <p>Shipping:</p>
+      <h2>Free</h2>
       <p>Total Cost:</p>
       <h2>${cartCost}</h2>
       <button onClick={() => setOpenCheckout(!openCheckout)} className="checkout-btn">CHECKOUT</button>
