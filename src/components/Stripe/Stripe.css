@@ -30,7 +30,7 @@
 }
 
 #checkout-form input {
-  width: 300px;
+  width: 280px;
   border: 0;
   border-bottom: 1px solid transparent;
   font-size: 16px;
@@ -80,4 +80,10 @@ hr {
   margin-top: 28px;
   margin-bottom: 14px;
   border-top: 1px dashed gray;
+}
+
+.note {
+  margin-top: 10px;
+  color: gray;
+  font-size: 14px;
 }

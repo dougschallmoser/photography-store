@@ -156,6 +156,7 @@ function CheckoutForm() {
         <CardElement options={CARD_OPTIONS} />
       </div>
       <button disabled={disabled} className="pay-btn">Pay</button>
+      <div className="note">Secure checkout provided through Stripe</div>
     </form>
   )
 }
