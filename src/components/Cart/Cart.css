@@ -75,7 +75,6 @@ h4 {
 .btn-qty {
   height: 36px;
   width: 36px;
-  border-radius: 50%;
   color: white;
   font-size: 1.5em;
   border: none;
@@ -112,10 +111,7 @@ h4 {
 }
 
 .trash img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+  margin: auto;
 }
 
 .checkout-btn {
