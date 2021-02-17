@@ -24,7 +24,7 @@ function CheckoutForm() {
 
   const stripe = useStripe();
   const elements = useElements();
-  const { cartCost, updateCheckout } = useContext(CartContext);
+  const { shipping, cartCost, updateCheckout } = useContext(CartContext);
 
   const [userInfo, setUserInfo] = useState({
     name: '',
@@ -150,7 +150,7 @@ function CheckoutForm() {
       </div>
       <hr/>
       <div className="note">Secure checkout provided through Stripe</div>
-      Total Cost: ${cartCost}
+      Total Cost: ${(cartCost + shipping).toFixed(2)}
       <div className="FormRow">
         <CardElement options={CARD_OPTIONS} />
       </div>
