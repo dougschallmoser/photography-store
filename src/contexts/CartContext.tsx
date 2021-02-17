@@ -5,6 +5,7 @@ import { ApplicationState, Item, ChildrenProps } from '../types';
 const initialState = {
   cartItems: [],
   cartCount: 0,
+  cartCost: "0",
   checkout: false
 }
 
@@ -52,6 +53,13 @@ export const CartContextProvider = ({ children }: ChildrenProps ) => {
     })
   }
 
+  function checkoutStatus(bool: boolean) {
+    dispatch({
+      type: 'CHECKOUT',
+      payload: bool
+    })
+  }
+
 
   return (
     <CartContext.Provider value={{
@@ -60,7 +68,8 @@ export const CartContextProvider = ({ children }: ChildrenProps ) => {
       removeItem,
       increaseQty,
       decreaseQty,
-      clearCart
+      clearCart,
+      checkoutStatus
     }}>
       {children}
     </CartContext.Provider>
