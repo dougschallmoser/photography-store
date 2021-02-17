@@ -2,7 +2,7 @@ import { ApplicationState, StateAction, Item } from '../types';
 
 function tallyCart(items: Item[]) {
   const cartCount = items.reduce((tot, item) => tot + item.quantity, 0)
-  const cartCost = items.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)
+  const cartCost = items.reduce((tot, item) => tot + item.price * item.quantity, 0).toFixed(2)
   return {
     cartCount,
     cartCost
@@ -55,6 +55,11 @@ function CartReducer(state: ApplicationState, action: StateAction): ApplicationS
         ...state,
         ...tallyCart([]),
         cartItems: []
+      }
+    case 'CHECKOUT':
+      return {
+        ...state,
+        checkout: action.payload
       }
     default: 
       return state
