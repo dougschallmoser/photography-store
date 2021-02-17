@@ -4,12 +4,10 @@ import * as EmailValidator from 'email-validator';
 import { CartContext } from '../../contexts/CartContext';
 
 const CARD_OPTIONS = {
-  iconStyle: 'solid',
   style: {
     base: {
       iconColor: 'rgb(110, 223, 170)',
       color: '#000',
-      fontWeight: 500,
       fontSize: '16px',
       fontSmoothing: 'antialiased',
       ':-webkit-autofill': {color: 'rgb(110, 223, 170)'},
@@ -37,18 +35,18 @@ function CheckoutForm() {
     zip: ''
   })
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUserInfo({
       ...userInfo,
       [event.target.name]: event.target.value
     })
   }
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const { error, paymentMethod } = await stripe!.createPaymentMethod({
       type: "card",
-      card: elements.getElement(CardElement)
+      card: elements!.getElement(CardElement)!
     })
 
     if (!error) {
@@ -58,7 +56,7 @@ function CheckoutForm() {
     }
   }
 
-  const validate = (name, email, address, city, state, zip) => {
+  const validate = (name: string, email: string, address: string, city: string, state: string, zip: string) => {
     return {
       name: name.length < 2,
       email: !EmailValidator.validate(email),
@@ -70,7 +68,7 @@ function CheckoutForm() {
   }
 
   const { name, email, address, city, state, zip } = userInfo;
-  const errors = validate(name, email, address, city, state, zip);
+  const errors: { [key: string]: boolean } = validate(name, email, address, city, state, zip);
   const disabled = Object.keys(errors).some(name => errors[name])
 
   return (
@@ -131,7 +129,7 @@ function CheckoutForm() {
           id="state"
           name="state"
           value={state.toUpperCase()}
-          maxLength="2"
+          maxLength={2}
           onChange={handleChange}
           className={state.length > 0 ? (errors.state ? "error" : "success") : ""}
           placeholder="WA"
@@ -144,7 +142,7 @@ function CheckoutForm() {
           id="zip"
           name="zip"
           value={zip}
-          maxLength="5"
+          maxLength={5}
           onChange={handleChange}
           className={zip.length > 0 ? (errors.zip ? "error" : "success") : ""}
           placeholder="98226"
