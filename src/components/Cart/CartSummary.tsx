@@ -5,18 +5,18 @@ import './Cart.css';
 
 function CartSummary() {
 
-  const { cartCount, cartCost, clearCart, updateCheckout, checkout } = useContext(CartContext);
+  const { shipping, cartCount, cartCost, clearCart, updateCheckout, checkout } = useContext(CartContext);
 
   return (
     <div className="cart-total">
       <p>Total Items:</p>
       <h2>{cartCount}</h2>
       <p>Subtotal:</p>
-      <h2>${cartCost}</h2>
+      <h2>${cartCost.toFixed(2)}</h2>
       <p>Shipping:</p>
-      <h2>Free</h2>
+      <h2>{shipping === 0 ? "Free" : shipping}</h2>
       <p>Total Cost:</p>
-      <h2>${cartCost}</h2>
+      <h2>${(cartCost + shipping).toFixed(2)}</h2>
       <button onClick={() => updateCheckout(true)} className="checkout-btn">CHECKOUT</button>
       {checkout && 
         <div className="checkout-modal">
