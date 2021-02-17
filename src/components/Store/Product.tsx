@@ -18,8 +18,7 @@ const Button = styled.button<ButtonProps>`
     outline: none;
   }
   &:hover {
-    background: ${props => props.added ? "black" : ""};
-    color: ${props => props.added ? "white" : ""};
+    background: ${props => props.added ? "#f5f5f5" : ""};
   }
 `
 
