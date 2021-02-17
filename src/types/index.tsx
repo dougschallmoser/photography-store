@@ -8,7 +8,7 @@ export interface ApplicationState {
   increaseQty?: any,
   decreaseQty?: any,
   clearCart?: any,
-  checkoutStatus?: any
+  updateCheckout?: any
 }
 
 export interface Item {

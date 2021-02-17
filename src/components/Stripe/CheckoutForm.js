@@ -26,7 +26,7 @@ function CheckoutForm() {
 
   const stripe = useStripe();
   const elements = useElements();
-  const { cartCost, checkoutStatus } = useContext(CartContext);
+  const { cartCost, updateCheckout } = useContext(CartContext);
 
   const [userInfo, setUserInfo] = useState({
     name: '',
@@ -157,7 +157,7 @@ function CheckoutForm() {
         <CardElement options={CARD_OPTIONS} />
       </div>
       <button disabled={disabled} className="pay-btn">Pay</button>
-      <button className="close-btn" type="button" onClick={() => checkoutStatus(false)}>Cancel</button>
+      <button className="close-btn" type="button" onClick={() => updateCheckout(false)}>Cancel</button>
     </form>
   )
 }

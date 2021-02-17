@@ -53,7 +53,7 @@ export const CartContextProvider = ({ children }: ChildrenProps ) => {
     })
   }
 
-  function checkoutStatus(bool: boolean) {
+  function updateCheckout(bool: boolean) {
     dispatch({
       type: 'CHECKOUT',
       payload: bool
@@ -69,7 +69,7 @@ export const CartContextProvider = ({ children }: ChildrenProps ) => {
       increaseQty,
       decreaseQty,
       clearCart,
-      checkoutStatus
+      updateCheckout
     }}>
       {children}
     </CartContext.Provider>

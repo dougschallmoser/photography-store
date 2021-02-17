@@ -5,7 +5,7 @@ import './Cart.css';
 
 function CartSummary() {
 
-  const { cartCount, cartCost, clearCart, checkoutStatus, checkout } = useContext(CartContext);
+  const { cartCount, cartCost, clearCart, updateCheckout, checkout } = useContext(CartContext);
 
   return (
     <div className="cart-total">
@@ -17,7 +17,7 @@ function CartSummary() {
       <h2>Free</h2>
       <p>Total Cost:</p>
       <h2>${cartCost}</h2>
-      <button onClick={() => checkoutStatus(true)} className="checkout-btn">CHECKOUT</button>
+      <button onClick={() => updateCheckout(true)} className="checkout-btn">CHECKOUT</button>
       {checkout && 
         <div className="checkout-modal">
           <StripeContainer />
