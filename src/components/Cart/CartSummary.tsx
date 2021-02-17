@@ -1,12 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import StripeContainer from '../Stripe';
 import './Cart.css';
 
 function CartSummary() {
 
-  const { cartCount, cartCost, clearCart } = useContext(CartContext);
-  const [openCheckout, setOpenCheckout] = useState(false);
+  const { cartCount, cartCost, clearCart, checkoutStatus, checkout } = useContext(CartContext);
 
   return (
     <div className="cart-total">
@@ -18,8 +17,8 @@ function CartSummary() {
       <h2>Free</h2>
       <p>Total Cost:</p>
       <h2>${cartCost}</h2>
-      <button onClick={() => setOpenCheckout(!openCheckout)} className="checkout-btn">CHECKOUT</button>
-      {openCheckout && 
+      <button onClick={() => checkoutStatus(true)} className="checkout-btn">CHECKOUT</button>
+      {checkout && 
         <div className="checkout-modal">
           <StripeContainer />
         </div>
