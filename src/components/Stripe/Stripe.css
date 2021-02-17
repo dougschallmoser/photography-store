@@ -84,6 +84,25 @@ hr {
 
 .note {
   margin-top: 10px;
+  margin-bottom: 14px;
   color: gray;
   font-size: 14px;
+}
+
+.close-btn {
+  margin-top: 10px;
+  background:rgb(216, 216, 216);
+  width: 100%;
+  padding: 8px 18px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: rgb(199, 199, 199);
+}
+
+.close-btn:focus {
+  outline: none;
 }

@@ -155,3 +155,9 @@ h4 {
   height: 100vh;
   z-index: 3;
 }
+
+@media only screen and (max-width: 1100px) {
+  .cart-container {
+    width: 90%
+  }
+}
