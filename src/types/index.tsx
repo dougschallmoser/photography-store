@@ -1,8 +1,9 @@
 export interface ApplicationState {
   cartItems: Item[],
   cartCount: number,
-  cartCost: string,
+  cartCost: number,
   checkout: boolean,
+  shipping: number,
   addItem?: any,
   removeItem?: any,
   increaseQty?: any,
