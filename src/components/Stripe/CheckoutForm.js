@@ -26,7 +26,7 @@ function CheckoutForm() {
 
   const stripe = useStripe();
   const elements = useElements();
-  const { cartCost } = useContext(CartContext);
+  const { cartCost, checkoutStatus } = useContext(CartContext);
 
   const [userInfo, setUserInfo] = useState({
     name: '',
@@ -151,12 +151,13 @@ function CheckoutForm() {
         />
       </div>
       <hr/>
+      <div className="note">Secure checkout provided through Stripe</div>
       Total Cost: ${cartCost}
       <div className="FormRow">
         <CardElement options={CARD_OPTIONS} />
       </div>
       <button disabled={disabled} className="pay-btn">Pay</button>
-      <div className="note">Secure checkout provided through Stripe</div>
+      <button className="close-btn" type="button" onClick={() => checkoutStatus(false)}>Cancel</button>
     </form>
   )
 }
