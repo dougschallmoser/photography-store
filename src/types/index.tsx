@@ -3,12 +3,12 @@ export interface ApplicationState {
   cartCount: number,
   cartCost: string,
   checkout: boolean,
-  addItem?: React.Dispatch<any>,
-  removeItem?: React.Dispatch<any>,
-  increaseQty?: React.Dispatch<any>,
-  decreaseQty?: React.Dispatch<any>,
-  clearCart?: React.Dispatch<any>,
-  checkoutStatus?: React.Dispatch<any>
+  addItem?: any,
+  removeItem?: any,
+  increaseQty?: any,
+  decreaseQty?: any,
+  clearCart?: any,
+  checkoutStatus?: any
 }
 
 export interface Item {
