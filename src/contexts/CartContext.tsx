@@ -5,8 +5,9 @@ import { ApplicationState, Item, ChildrenProps } from '../types';
 const initialState = {
   cartItems: [],
   cartCount: 0,
-  cartCost: "0",
-  checkout: false
+  cartCost: 0,
+  checkout: false,
+  shipping: 0
 }
 
 export const CartContext = createContext<ApplicationState>(initialState);
