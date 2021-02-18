@@ -5,20 +5,19 @@ import { ProductItem } from '../../types';
 import styled from 'styled-components';
 
 interface ButtonProps {
-  added: boolean
+  added: boolean,
+  btnText: string
 }
 
 const Button = styled.button<ButtonProps>`
   padding: 8px 18px;
-  background: ${props => props.added ? "white" : "black"};
-  color: ${props => props.added ? "black" : "white"};
-  border: ${props => props.added ? "2px solid black" : "2px solid transparent"};
+  background: ${props => props.added ? (props.btnText === 'ADDED!' ? "#5ee6a6" : "white") : "black"};
+  color: ${props => props.added ? (props.btnText === 'ADDED!' ? "white" : "black") : "white"};
+  width: 140px;
+  border: ${props => props.added ? (props.btnText === 'ADDED!' ? "2px solid transparent" : "2px solid black") : "2px solid transparent"};
   cursor: pointer;
   &:focus {
     outline: none;
-  }
-  &:hover {
-    background: ${props => props.added ? "#f5f5f5" : ""};
   }
 `
 
@@ -43,6 +42,7 @@ function Product({ data }: DataProps) {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState('5x7');
   const [imgLoaded, setImgLoaded] = useState(false);
+  const [btnText, setBtnText] = useState('');
 
   const added = useMemo(() => cartItems.some(item => item.id === data.id && item.size === size), [cartItems, data, size])
 
@@ -51,10 +51,12 @@ function Product({ data }: DataProps) {
   }
 
   const handleAddItem = () => {
+    setBtnText('ADDED!');
     const modifiedData: any = Object.assign({}, data)
     modifiedData.price = modifiedData.price[size]
     modifiedData.size = size
     addItem(modifiedData)
+    setTimeout(() => setBtnText('ADD ANOTHER'), 1500)
   }
   
   return (
@@ -87,8 +89,8 @@ function Product({ data }: DataProps) {
         <option value="24x30">24 x 30</option>
         <option value="30x40">30 x 40</option>
       </Select>
-      <Button added={added} onClick={handleAddItem}>
-        {added ? "ADD ANOTHER" : "ADD TO CART"}
+      <Button added={added} btnText={btnText} onClick={handleAddItem}>
+        {added ? btnText : "ADD TO CART"}
       </Button>
     </div>
   )
