@@ -42,7 +42,7 @@ function Product({ data }: DataProps) {
   const [open, setOpen] = useState(false);
   const [size, setSize] = useState('5x7');
   const [imgLoaded, setImgLoaded] = useState(false);
-  const [btnText, setBtnText] = useState('');
+  const [btnText, setBtnText] = useState('ADD ANOTHER');
 
   const added = useMemo(() => cartItems.some(item => item.id === data.id && item.size === size), [cartItems, data, size])
 
