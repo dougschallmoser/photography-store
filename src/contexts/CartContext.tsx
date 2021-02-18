@@ -1,11 +1,13 @@
 import React, { createContext, useReducer } from 'react';
-import CartReducer from './CartReducer';
+import CartReducer, { tallyCart } from './CartReducer';
 import { ApplicationState, Item, ChildrenProps } from '../types';
 
+
+const storageItems = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : []
+
 const initialState = {
-  cartItems: [],
-  cartCount: 0,
-  cartCost: 0,
+  cartItems: storageItems,
+  ...tallyCart(storageItems),
   checkout: false,
   shipping: 0
 }

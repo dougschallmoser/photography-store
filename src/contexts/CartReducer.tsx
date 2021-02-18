@@ -1,8 +1,14 @@
 import { ApplicationState, StateAction, Item } from '../types';
 
-function tallyCart(items: Item[]) {
+const setStorage = (items: Item[]) => {
+  localStorage.setItem('cart', JSON.stringify(items.length > 0 ? items : []));
+}
+
+export function tallyCart(items: Item[]) {
+  setStorage(items)
   const cartCount = items.reduce((tot, item) => tot + item.quantity, 0)
   const cartCost = items.reduce((tot, item) => tot + item.price * item.quantity, 0)
+
   return {
     cartCount,
     cartCost
