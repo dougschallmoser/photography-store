@@ -18,6 +18,8 @@
 }
 
 .cart-total {
+  margin-left: 20px;
+  background: white;
   text-align: center;
   border: 1px solid rgb(223, 223, 223);
   padding: 2%;
@@ -59,6 +61,9 @@ h4 {
 .cart-item-container {
   display: flex;
   margin: 15px;
+  padding: 16px 0;
+  background: white;
+  border: 1px solid rgb(223, 223, 223);
   justify-content: center;
   align-items: center;
 }

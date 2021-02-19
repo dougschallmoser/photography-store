@@ -4,8 +4,8 @@ nav {
   position: fixed;
   margin-bottom: 20px;
   top: 0;
-  background: white;
   font-weight: 400;
+  background: #fcfaf6;
   z-index: 2;
 }
 
@@ -23,19 +23,20 @@ nav a:hover {
 
 nav ul {
   margin: 0;
-  margin-bottom: 12px;
   padding: 0;
   text-align: center;
+  box-shadow: 0 7px 8px -12px #333;
 }
 
 nav ul:first-child {
+  margin-bottom: 26px;
+  padding-top: 10px;
+  background: white;
   font-size: 50px;
   font-weight: 200;
   font-family: 'Nunito Sans', sans-serif;
   color: #6969694A;
   letter-spacing: 0.4em;
-  margin-top: 20px;
-  margin-bottom: 26px;
 }
 
 nav ul li {
