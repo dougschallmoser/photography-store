@@ -1,4 +1,4 @@
-![Photography Store](https://user-images.githubusercontent.com/65590878/107867636-6ca2e600-6e31-11eb-80b7-767e1b610bd8.png)
+![Photography Store](https://user-images.githubusercontent.com/65590878/108454788-e7994180-7221-11eb-8635-260805937327.png)
 
 
 # Photography Store
