@@ -25,11 +25,9 @@ nav ul {
   margin: 0;
   padding: 0;
   text-align: center;
-  box-shadow: 0 7px 8px -12px #333;
 }
 
 nav ul:first-child {
-  margin-bottom: 26px;
   padding-top: 10px;
   background: white;
   font-size: 50px;
@@ -37,6 +35,13 @@ nav ul:first-child {
   font-family: 'Nunito Sans', sans-serif;
   color: #6969694A;
   letter-spacing: 0.4em;
+  border-bottom: 1px solid rgb(223, 223, 223);
+}
+
+nav ul:nth-child(2) {
+  padding: 10px;
+  background: white;
+  box-shadow: 20px 7px 8px -12px #333;
 }
 
 nav ul li {
