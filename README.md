@@ -3,7 +3,7 @@
 
 # Photography Store
 
-A custom ecommerce store and shopping cart for photography.  Built entirely with React. Utilizes Context API + userReducer for global state management.
+A custom ecommerce store and shopping cart for photography.  Built entirely with React/TypeScript. Utilizes Context API + userReducer for global state management and styled-components UI styling.
 
 [Live Demo](https://photography-store.netlify.app/)
 
