@@ -43,6 +43,10 @@ h3, h2 {
   font-weight: 300;
 }
 
+.products-grid h4 {
+  text-align: center;
+}
+
 .loader {
   position: relative;
   left: 44%;

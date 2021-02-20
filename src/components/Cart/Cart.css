@@ -7,6 +7,7 @@
 
 .cart-container .cart-total {
   flex: 0.3;
+  height: 350px;
 }
 
 .cart-container .cart-items {
@@ -70,6 +71,10 @@ h4 {
 
 .cart-item-container div {
   flex: 1;
+}
+
+.cart-items .cart-item-container:first-child {
+  margin-top: 0;
 }
 
 .cart-item-container div:nth-child(2) h3,
