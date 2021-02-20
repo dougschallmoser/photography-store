@@ -11,7 +11,7 @@ interface ButtonProps {
 
 const Button = styled.button<ButtonProps>`
   padding: 8px 18px;
-  background: ${props => props.added ? (props.btnText === 'ADDED!' ? "#5ee6a6" : "white") : "black"};
+  background: ${props => props.added ? (props.btnText === 'ADDED!' ? "#5ee6a6" : "#fff9ee") : "black"};
   color: ${props => props.added ? (props.btnText === 'ADDED!' ? "white" : "black") : "white"};
   width: 140px;
   border: ${props => props.added ? (props.btnText === 'ADDED!' ? "2px solid transparent" : "2px solid black") : "2px solid transparent"};
@@ -77,7 +77,7 @@ function Product({ data }: DataProps) {
         onLoad={() => setImgLoaded(true)}
       />
       <h3>{data.name}</h3>
-      <h2>{size === 'SELECT' ? `From $${data.price['5x7'].toFixed(2)}` : `$${data.price[size].toFixed(2)}`}</h2>
+      <h4>{size === 'SELECT' ? `From $${data.price['5x7'].toFixed(2)}` : `$${data.price[size].toFixed(2)}`}</h4>
       Size:
       <Select 
         value={size} 
