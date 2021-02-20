@@ -15,7 +15,8 @@ const Button = styled.button<ButtonProps>`
   color: ${props => props.added ? (props.btnText === 'ADDED!' ? "white" : "black") : "white"};
   width: 140px;
   border: ${props => props.added ? (props.btnText === 'ADDED!' ? "2px solid transparent" : "2px solid black") : "2px solid transparent"};
-  cursor: pointer;
+  cursor: ${props => props.disabled ? "default" : "pointer"};
+  opacity: ${props => props.disabled ? "0.25" : ""};
   &:focus {
     outline: none;
   }
@@ -40,7 +41,7 @@ function Product({ data }: DataProps) {
 
   const { cartItems, addItem } = useContext(CartContext);
   const [open, setOpen] = useState(false);
-  const [size, setSize] = useState('5x7');
+  const [size, setSize] = useState('SELECT');
   const [imgLoaded, setImgLoaded] = useState(false);
   const [btnText, setBtnText] = useState('ADD ANOTHER');
 
@@ -76,12 +77,13 @@ function Product({ data }: DataProps) {
         onLoad={() => setImgLoaded(true)}
       />
       <h3>{data.name}</h3>
-      <h2>${data.price[size].toFixed(2)}</h2>
+      <h2>{size === 'SELECT' ? `From $${data.price['5x7'].toFixed(2)}` : `$${data.price[size].toFixed(2)}`}</h2>
       Size:
       <Select 
         value={size} 
         onChange={handleSelect} 
       >
+        <option value="SELECT">SELECT</option>
         <option value="5x7">5 x 7</option>
         <option value="8x10">8 x 10</option>
         <option value="11x14">11 x 14</option>
@@ -89,7 +91,7 @@ function Product({ data }: DataProps) {
         <option value="24x30">24 x 30</option>
         <option value="30x40">30 x 40</option>
       </Select>
-      <Button added={added} btnText={btnText} onClick={handleAddItem}>
+      <Button disabled={size === 'SELECT'} added={added} btnText={btnText} onClick={handleAddItem}>
         {added ? btnText : "ADD TO CART"}
       </Button>
     </div>
