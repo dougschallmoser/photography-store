@@ -16,11 +16,6 @@ nav a {
   letter-spacing: 0.2em;
 }
 
-
-nav a:hover {
-  text-decoration: underline;
-}
-
 nav ul {
   margin: 0;
   padding: 0;
@@ -39,13 +34,22 @@ nav ul:first-child {
 }
 
 nav ul:nth-child(2) {
-  padding: 10px;
   background: #fff9ee;
-  box-shadow: 20px 7px 8px -12px #333;
+  box-shadow: 0 7px 8px -12px #333;
 }
 
 nav ul li {
   display: inline-block;
+  padding: 10px;
+  border-right: 0.5px solid transparent;
+  border-left: 0.5px solid transparent;
+}
+
+nav ul:nth-child(2) li:hover {
+  background: white;
+  cursor: pointer;
+  border-right: 0.5px solid rgb(223, 223, 223);
+  border-left: 0.5px solid rgb(223, 223, 223);
 }
 
 nav ul li:not(:last-child) {
