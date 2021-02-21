@@ -44,6 +44,10 @@ export const CartContextProvider = ({ children }: ChildrenProps ) => {
   }
 
   function decreaseQty(item: Item) {
+    if (item.quantity === 1) {
+      return removeItem(item)
+    }
+    
     dispatch({
       type: 'DECREASE_QTY',
       payload: item
