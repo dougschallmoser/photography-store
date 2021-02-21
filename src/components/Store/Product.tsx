@@ -2,12 +2,8 @@ import React, { useState, useContext, useMemo } from 'react';
 import './Product.css';
 import { CartContext } from '../../contexts/CartContext';
 import { ProductItem } from '../../types';
+import { ButtonProps } from '../../types';
 import styled from 'styled-components';
-
-interface ButtonProps {
-  added: boolean,
-  btnText: string
-}
 
 const Button = styled.button<ButtonProps>`
   padding: 8px 18px;

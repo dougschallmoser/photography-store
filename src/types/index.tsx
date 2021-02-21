@@ -38,3 +38,8 @@ export interface StateAction {
   type: string;
   payload: any;
 }
+
+export interface ButtonProps {
+  added: boolean,
+  btnText: string
+}
