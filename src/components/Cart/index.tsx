@@ -17,7 +17,7 @@ function Cart() {
             <CartItems />
             <CartSummary />
           </div>
-          : <h3>Your shopping cart is empty.</h3>
+          : <h3>Your shopping cart is empty</h3>
         }
     </Layout>
   )
