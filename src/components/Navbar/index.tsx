@@ -22,14 +22,14 @@ function Navbar() {
         <li>DOUG SCHALLMOSER</li>
       </ul>
       <ul>
-        <li><Link to="/">MAIN</Link></li>
-        <li><Link to="/store">STORE</Link></li>
-        <li>
-          <img src={process.env.PUBLIC_URL + '/images/shopping_cart.svg'} alt="cart icon"/>
-          <Link to="/cart">
+        <Link to="/"><li>MAIN</li></Link>
+        <Link to="/store"><li>STORE</li></Link>
+        <Link to="/cart">
+          <li>
+            <img src={process.env.PUBLIC_URL + '/images/shopping_cart.svg'} alt="cart icon"/>
             CART(<Span empty={cartCount === 0}>{cartCount}</Span>)
-          </Link>
-        </li>
+          </li>
+        </Link>
       </ul>
     </nav>
   )
