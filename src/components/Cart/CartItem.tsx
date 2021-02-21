@@ -29,7 +29,7 @@ function CartItem({ item }: ItemProps ) {
       </div>
       <div>
         <button onClick={() => increaseQty(item)} className="btn-qty increase">&#43;</button>
-        {item.quantity > 1 && <button onClick={() => decreaseQty(item)} className="btn-qty decrease">&#8722;</button>}
+        <button onClick={() => decreaseQty(item)} className="btn-qty decrease">&#8722;</button>
         <button onClick={() => removeItem(item)} className="btn-qty trash">
           <img src={process.env.PUBLIC_URL + '/images/trash.svg'} alt="trash can"/>
         </button>
