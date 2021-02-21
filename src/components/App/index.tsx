@@ -8,7 +8,8 @@ function App() {
 
   return (
     <Layout>
-      <h2>WELCOME TO MY PHOTOGRAPHY STORE</h2>
+      <h3>WELCOME TO MY</h3>
+      <h1>PHOTOGRAPHY STORE</h1>
       <div id="splash-image">
         {!imgLoaded && <div className="loader-splash" />}
         <img 
