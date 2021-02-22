@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import * as EmailValidator from 'email-validator';
-import { CartContext } from '../../contexts/CartContext';
+import axios from 'axios';
 
 const CARD_OPTIONS = {
   style: {
@@ -50,7 +51,18 @@ function CheckoutForm() {
     })
 
     if (!error) {
-      console.log("Stripe token generated!", paymentMethod)
+      try {
+        const response = await axios.post(
+          'http://localhost:8080/stripe/charge',
+          {
+            amount: cartCost * 100,
+            id: paymentMethod!.id
+          }
+        )
+        console.log(response.data.success)
+      } catch (err) {
+        console.log(err)
+      }
     } else {
       console.log(error.message)
     }
