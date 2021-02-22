@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import { API_ROOT } from '../../constants';
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import * as EmailValidator from 'email-validator';
 import axios from 'axios';
@@ -63,7 +64,7 @@ function CheckoutForm() {
       }
 
       try {
-        const response = await axios.post('http://localhost:8080/stripe/charge', paymentObj)
+        const response = await axios.post(`${API_ROOT}/stripe/charge`, paymentObj)
         
         if (response.data.success) {
           setMessage('Your order has been successfully placed!')
