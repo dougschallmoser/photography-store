@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_PRODUCTION);
 const parser = require('body-parser');
 const cors = require('cors');
 
@@ -13,7 +13,7 @@ app.post('/stripe/charge', cors(), async (req, res) => {
   let { amount, id } = req.body;
 
   try {
-    const payment = await stripe.paymentIntents.create({
+    await stripe.paymentIntents.create({
       amount,
       currency: "USD",
       description: "Doug Schallmoser Photography",
