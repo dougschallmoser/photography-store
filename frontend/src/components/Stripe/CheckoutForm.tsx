@@ -25,7 +25,11 @@ function CheckoutForm() {
 
   const stripe = useStripe();
   const elements = useElements();
-  const { shipping, cartCost, updateCheckout } = useContext(CartContext);
+  const { shipping, cartCost, updateCheckout, clearCart } = useContext(CartContext);
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const [userInfo, setUserInfo] = useState({
     name: '',
@@ -45,30 +49,37 @@ function CheckoutForm() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true);
+
     const { error, paymentMethod } = await stripe!.createPaymentMethod({
       type: "card",
       card: elements!.getElement(CardElement)!
     })
 
     if (!error) {
+      const paymentObj = {
+        amount: cartCost * 100,
+        id: paymentMethod!.id
+      }
+
       try {
-        const response = await axios.post(
-          'http://localhost:8080/stripe/charge',
-          {
-            amount: cartCost * 100,
-            id: paymentMethod!.id
-          }
-        )
+        const response = await axios.post('http://localhost:8080/stripe/charge', paymentObj)
         
         if (response.data.success) {
-          console.log('Success!')
+          setMessage('Your order has been successfully placed!')
+          setSuccess(true)
         }
+
       } catch (err) {
-        console.log(err)
+        setMessage(`Something went wrong: ${err}`)
+        setFailure(true)
       }
     } else {
-      console.log(error.message)
+      setMessage(`Something went wrong: ${error.message}`)
+      setFailure(true)
     }
+
+    setLoading(false);
   }
 
   const validate = (name: string, email: string, address: string, city: string, state: string, zip: string) => {
@@ -87,7 +98,23 @@ function CheckoutForm() {
   const disabled = Object.keys(errors).some(name => errors[name])
 
   return (
+    success || failure ? 
+      <>
+        <div className="checkout-modal">
+          <div id="checkout-form">
+            <h3>{message}</h3>
+            <button
+              className="close-btn"
+              type="button"
+              onClick={success ? () => clearCart() : () => updateCheckout(false)}
+            >Close
+            </button>
+          </div>
+        </div>
+      </>
+    :
     <form id="checkout-form" onSubmit={handleSubmit}>
+      {loading && <div className="loader" />}
       <div id="checkout-header">Checkout</div>
       <div className="FormRow">
         <label htmlFor="name">Name</label>
