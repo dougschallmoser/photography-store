@@ -59,7 +59,10 @@ function CheckoutForm() {
             id: paymentMethod!.id
           }
         )
-        console.log(response.data.success)
+        
+        if (response.data.success) {
+          console.log('Success!')
+        }
       } catch (err) {
         console.log(err)
       }
