@@ -72,7 +72,7 @@ function CheckoutForm() {
         }
 
       } catch (err) {
-        setMessage(`Something went wrong: ${err}`)
+        setMessage(err)
         setFailure(true)
       }
     } else {
