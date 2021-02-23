@@ -1,4 +1,4 @@
-![Photography Store](https://user-images.githubusercontent.com/65590878/108611240-8a240280-7391-11eb-87df-e85a64e8a18d.png)
+![Photography Store](https://user-images.githubusercontent.com/65590878/108797238-9352d200-753f-11eb-9838-287770acf1b3.png)
 
 
 # Photography Store
@@ -15,7 +15,7 @@ To run this application in your local environment, please follow these steps:
 ```
 1. Clone this repository to your local machine using this command in the terminal:
       git clone https://github.com/dougschallmoser/photography-store.git
-2. Change directory to 'photography-store'
+2. Change directory to 'photography-store/frontend'
 3. Run 'npm install'
 4. Run 'npm start'
 5. Navigate to localhost:3000 in your browser
