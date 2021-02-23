@@ -76,7 +76,7 @@ function CheckoutForm() {
         setFailure(true)
       }
     } else {
-      setMessage(`Something went wrong: ${error.message}`)
+      setMessage(`${error.message}`)
       setFailure(true)
     }
 
