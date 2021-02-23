@@ -4,6 +4,7 @@
   width: 75%;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2% 5%;
+  justify-items: center;
 }
 
 .products-length {
