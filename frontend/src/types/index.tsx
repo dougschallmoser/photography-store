@@ -30,6 +30,15 @@ export interface ProductItem {
   photo: string
 }
 
+export enum ActionType {
+  Add = 'ADD_ITEM',
+  Remove = 'REMOVE_ITEM',
+  Increase = 'INCREASE_QTY',
+  Decrease = 'DECREASE_QTY',
+  Clear = 'CLEAR_CART',
+  Checkout = 'CHECKOUT'
+}
+
 export interface ChildrenProps {
   children: React.ReactNode
 }
