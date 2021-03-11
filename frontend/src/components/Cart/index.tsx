@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import Layout from '../Layout';
+import { useContext } from 'react';
+import Layout from '../../common/Layout';
 import './Cart.css';
 import { CartContext } from '../../contexts/CartContext';
 import CartItems from './CartItems';

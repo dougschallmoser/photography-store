@@ -1,4 +1,3 @@
-import React from 'react';
 import CheckoutForm from './CheckoutForm';
 import { PUBLIC_KEY } from '../../constants';
 import { loadStripe } from "@stripe/stripe-js";

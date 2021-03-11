@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { ProductsContext } from '../../contexts/ProductsContext';
 import Product from './Product';
-import Layout from '../Layout';
+import Layout from '../../common/Layout';
 import './Store.css';
 
 function Store() {

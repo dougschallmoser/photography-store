@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Layout from '../Layout';
+import { useState } from 'react';
+import Layout from '../../common/Layout';
 import './App.css';
 
 function App() {

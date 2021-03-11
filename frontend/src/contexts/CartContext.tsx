@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+import { createContext, useReducer } from 'react';
 import CartReducer, { tallyCart } from './CartReducer';
 import { ApplicationState, Item, ChildrenProps } from '../types';
 

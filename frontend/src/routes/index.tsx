@@ -1,9 +1,8 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Store from '../components/Store';
 import Cart from '../components/Cart';
 import App from '../components/App';
-import Error from '../components/Error';
+import Error from '../common/Error';
 import './Global.css';
 
 function Routes() {
