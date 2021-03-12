@@ -11,7 +11,7 @@ function App() {
       <h3>WELCOME TO MY</h3>
       <h1>PHOTOGRAPHY STORE</h1>
       <div id="splash-image">
-        {!imgLoaded && <div className="loader-splash" />}
+        {!imgLoaded && <div data-testid="loader" className="loader-splash" />}
         <img 
           style={ imgLoaded ? {} : { visibility: "hidden" }} 
           src="/images/splash.jpg" alt="Mountain" 
