@@ -31,3 +31,17 @@ describe('product button works properly', () => {
     expect(firstProductBtn).toHaveTextContent('ADDED!')
   })
 })
+
+test('price changes when size changes', () => {
+  render (<Store />)
+
+  const firstProductSize = screen.getAllByRole('combobox')[0]
+  const firstProductHeading = screen.getAllByRole('heading', { name: /from/i })[0]
+  expect(firstProductHeading).toHaveTextContent('From $30.00')
+  
+  userEvent.selectOptions(firstProductSize, ['5x7'])
+  expect(firstProductHeading).toHaveTextContent('$30.00')
+
+  userEvent.selectOptions(firstProductSize, ['8x10'])
+  expect(firstProductHeading).toHaveTextContent('$55.00')
+})
