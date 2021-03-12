@@ -59,8 +59,8 @@ function Product({ data }: DataProps) {
   return (
     <div>
       {open && 
-        <div className="image-modal">
-          <img onClick={() => setOpen(!open)} src={`${data.photo}`} alt={data.name} />
+        <div className={`image-modal-${data.name}`}>
+          <img onClick={() => setOpen(!open)} src={`${data.photo}`} alt={`${data.name}-modal`} />
         </div>
       }
       {!imgLoaded && <div className="loader" />}

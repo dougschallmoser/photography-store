@@ -45,3 +45,13 @@ test('price changes when size changes', () => {
   userEvent.selectOptions(firstProductSize, ['8x10'])
   expect(firstProductHeading).toHaveTextContent('$55.00')
 })
+
+test('modal opens on image click', () => {
+  render(<Store />)
+
+  const summerFlowersImg = screen.getByAltText('Summer Flowers')
+  userEvent.click(summerFlowersImg)
+  
+  const summerFlowersModalImg = screen.getByAltText('Summer Flowers-modal')
+  expect(summerFlowersModalImg).toBeInTheDocument()
+})
