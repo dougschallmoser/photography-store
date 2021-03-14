@@ -22,6 +22,28 @@ test('order print for happy path', () => {
   // assert product is in cart
   const productHeading = screen.getByRole('heading', { name: 'Sky Vibrancy' })
   const sizeHeading = screen.getByRole('heading', { name: /5x7/i })
+  const subtotalHeading = screen.getAllByRole('heading', { name: /30.00/i })[0]
   expect(productHeading).toBeInTheDocument()
   expect(sizeHeading).toBeInTheDocument()
+  expect(subtotalHeading).toBeInTheDocument()
+
+  // assert quantity is 1
+  const quantity = screen.getByText(/qty: 1/i)
+  expect(quantity).toBeInTheDocument()
+  
+  // click increase button and assert quantity is 2
+  const increaseBtn = screen.getByRole('button', { name: '+' })
+  userEvent.click(increaseBtn)
+  const newQuantity = screen.getByText(/qty: 2/i)
+  expect(newQuantity).toBeInTheDocument()
+
+  // click decrease button and assert quantity is 1
+  const decreaseBtn = screen.getByRole('button', {name: '−' })
+  userEvent.click(decreaseBtn)
+  expect(quantity).toBeInTheDocument()
+
+  // click remove button and assert quantity is gone
+  const removeBtn = screen.getByRole('img', { name: /trash/i })
+  userEvent.click(removeBtn)
+  expect(screen.queryByText('qty')).toBeNull()
 })
