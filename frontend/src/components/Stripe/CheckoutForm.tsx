@@ -107,7 +107,7 @@ function CheckoutForm() {
             <button
               className="close-btn"
               type="button"
-              onClick={success ? () => clearCart() : () => updateCheckout(false)}
+              onClick={success ? () => clearCart!() : () => updateCheckout!(false)}
             >Close
             </button>
           </div>
@@ -198,7 +198,7 @@ function CheckoutForm() {
         <CardElement options={CARD_OPTIONS} />
       </div>
       <button disabled={disabled} className="pay-btn">Pay</button>
-      <button className="close-btn" type="button" onClick={() => updateCheckout(false)}>Cancel</button>
+      <button className="close-btn" type="button" onClick={() => updateCheckout!(false)}>Cancel</button>
     </form>
   )
 }

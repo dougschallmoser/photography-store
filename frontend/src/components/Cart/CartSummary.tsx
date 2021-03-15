@@ -17,13 +17,13 @@ function CartSummary() {
       <h2>{shipping === 0 ? "Free" : shipping}</h2>
       <p>Total Cost:</p>
       <h2>${(cartCost + shipping).toFixed(2)}</h2>
-      <button onClick={() => updateCheckout(true)} className="checkout-btn">CHECKOUT</button>
+      <button onClick={() => updateCheckout!(true)} className="checkout-btn">CHECKOUT</button>
       {checkout && 
         <div className="checkout-modal">
           <StripeContainer />
         </div>
       }
-      <div onClick={() => clearCart()} id="clear-cart">CLEAR CART</div>
+      <div onClick={() => clearCart!()} id="clear-cart">CLEAR CART</div>
     </div>
   )
 }

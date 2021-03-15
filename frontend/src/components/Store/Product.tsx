@@ -52,7 +52,7 @@ function Product({ data }: DataProps) {
     const modifiedData: any = Object.assign({}, data)
     modifiedData.price = modifiedData.price[size]
     modifiedData.size = size
-    addItem(modifiedData)
+    addItem!(modifiedData)
     setTimeout(() => setBtnText('ADD ANOTHER'), 1500)
   }
   
