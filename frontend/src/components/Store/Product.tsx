@@ -47,7 +47,7 @@ function Product({ data }: DataProps) {
     setSize(event.target.value)
   }
 
-  const handleAddItem = () => {
+  const handleAddItem: () => void = () => {
     setBtnText('ADDED!');
     const modifiedData: any = Object.assign({}, data)
     modifiedData.price = modifiedData.price[size]
