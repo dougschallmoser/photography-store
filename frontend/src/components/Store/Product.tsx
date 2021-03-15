@@ -29,11 +29,7 @@ const Select = styled.select`
     outline: none;
 `
 
-type DataProps = {
-  data: ProductItem
-}
-
-function Product({ data }: DataProps) {
+function Product({ data }: { data: ProductItem}) {
 
   const { cartItems, addItem } = useContext(CartContext);
   const [open, setOpen] = useState(false);

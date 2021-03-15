@@ -2,11 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { Item } from '../../types';
 
-type ItemProps = {
-  item: Item
-}
-
-function CartItem({ item }: ItemProps ) {
+function CartItem({ item }: { item: Item} ) {
 
   const { increaseQty, decreaseQty, removeItem } = useContext(CartContext);
   
