@@ -4,12 +4,12 @@ export interface ApplicationState {
   cartCost: number,
   checkout: boolean,
   shipping: number,
-  addItem?: any,
-  removeItem?: any,
-  increaseQty?: any,
-  decreaseQty?: any,
-  clearCart?: any,
-  updateCheckout?: any
+  addItem?: (item: Item) => void,
+  removeItem?: (item: Item) => void,
+  increaseQty?: (item: Item) => void,
+  decreaseQty?: (item: Item) => void,
+  clearCart?: () => void,
+  updateCheckout?: (bool: boolean) => void
 }
 
 export interface Item {
