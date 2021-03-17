@@ -30,7 +30,7 @@ export interface ProductItem {
   photo: string
 }
 
-export enum ActionType {
+export enum ActionTypes {
   Add = 'ADD_ITEM',
   Remove = 'REMOVE_ITEM',
   Increase = 'INCREASE_QTY',
