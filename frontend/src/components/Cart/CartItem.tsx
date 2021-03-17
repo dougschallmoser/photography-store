@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import { Item } from '../../types';
 
-function CartItem({ item }: { item: Item} ) {
+function CartItem({ item }: { item: Item}): JSX.Element {
 
   const { increaseQty, decreaseQty, removeItem } = useContext(CartContext);
   

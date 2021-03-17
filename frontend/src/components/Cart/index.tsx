@@ -5,7 +5,7 @@ import { CartContext } from '../../contexts/CartContext';
 import CartItems from './CartItems';
 import CartSummary from './CartSummary';
 
-function Cart() {
+function Cart(): JSX.Element {
 
   const { cartCount } = useContext(CartContext);
 

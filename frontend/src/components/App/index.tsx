@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Layout from '../../common/Layout';
 import './App.css';
 
-function App() {
+function App(): JSX.Element {
 
   const [imgLoaded, setImgLoaded] = useState<boolean>(false);
 

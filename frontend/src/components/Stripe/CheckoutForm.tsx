@@ -22,7 +22,7 @@ const CARD_OPTIONS = {
   },
 };
 
-function CheckoutForm() {
+function CheckoutForm(): JSX.Element {
 
   const stripe = useStripe();
   const elements = useElements();

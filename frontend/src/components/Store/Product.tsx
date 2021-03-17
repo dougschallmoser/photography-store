@@ -29,7 +29,7 @@ const Select = styled.select`
     outline: none;
 `
 
-function Product({ data }: { data: ProductItem}) {
+function Product({ data }: { data: ProductItem}): JSX.Element {
 
   const { cartItems, addItem } = useContext(CartContext);
   const [open, setOpen] = useState(false);

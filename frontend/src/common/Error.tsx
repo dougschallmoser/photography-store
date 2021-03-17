@@ -1,6 +1,6 @@
 import Layout from './Layout';
 
-function Error() {
+function Error(): JSX.Element {
   return (
     <Layout>
       <h1>That page does not exist!</h1>

@@ -4,7 +4,7 @@ import Product from './Product';
 import Layout from '../../common/Layout';
 import './Store.css';
 
-function Store() {
+function Store(): JSX.Element {
 
   const { products } = useContext(ProductsContext);
 

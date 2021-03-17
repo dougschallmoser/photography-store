@@ -5,7 +5,7 @@ import App from '../components/App';
 import Error from '../common/Error';
 import './Global.css';
 
-function Routes() {
+function Routes(): JSX.Element {
   return (
     <Router>
       <Switch>

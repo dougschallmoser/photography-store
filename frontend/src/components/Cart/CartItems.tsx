@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import CartItem from './CartItem';
 
-function CartItems() {
+function CartItems(): JSX.Element {
 
   const { cartItems } = useContext(CartContext);
 

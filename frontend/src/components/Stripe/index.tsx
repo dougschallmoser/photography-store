@@ -6,7 +6,7 @@ import './Stripe.css';
 
 const stripeTestPromise = loadStripe(PUBLIC_KEY);
 
-function StripeContainer() {
+function StripeContainer(): JSX.Element {
   return (
     <Elements stripe={stripeTestPromise}>
       <CheckoutForm />

@@ -3,7 +3,7 @@ import { CartContext } from '../../contexts/CartContext';
 import StripeContainer from '../Stripe';
 import './Cart.css';
 
-function CartSummary() {
+function CartSummary(): JSX.Element {
 
   const { shipping, cartCount, cartCost, clearCart, updateCheckout, checkout } = useContext(CartContext);
 

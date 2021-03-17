@@ -12,7 +12,7 @@ const Span = styled.span<SpanProps>`
   color: ${props => props.empty ? "black" : "#26ad5e"};
 `
 
-function Navbar() {
+function Navbar(): JSX.Element {
 
   const { cartCount } = useContext(CartContext);
 
