@@ -59,7 +59,7 @@ function Product({ data }: { data: ProductItem}): JSX.Element {
   return (
     <div>
       {open && 
-        <div className={`image-modal-${data.name}`}>
+        <div className={`image-modal image-modal-${data.name}`}>
           <img onClick={() => setOpen(!open)} src={`${data.photo}`} alt={`${data.name}-modal`} />
         </div>
       }
