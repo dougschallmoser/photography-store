@@ -1,3 +1,5 @@
+export * from './actions';
+
 export interface ApplicationState {
   cartItems: Item[],
   cartCount: number,
@@ -30,25 +32,6 @@ export interface ProductItem {
   photo: string
 }
 
-export enum ActionTypes {
-  Add = 'ADD_ITEM',
-  Remove = 'REMOVE_ITEM',
-  Increase = 'INCREASE_QTY',
-  Decrease = 'DECREASE_QTY',
-  Clear = 'CLEAR_CART',
-  Checkout = 'CHECKOUT'
-}
-
 export interface ChildrenProps {
   children: React.ReactNode
-}
-
-export interface StateAction {
-  type: string;
-  payload: any;
-}
-
-export interface ButtonProps {
-  added: boolean,
-  btnText: string
 }

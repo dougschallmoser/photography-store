@@ -1,4 +1,4 @@
-import { ApplicationState, StateAction, ActionTypes, Item } from '../types';
+import { ApplicationState, Action, ActionTypes, Item } from '../types';
 
 const setStorage = (items: Item[]) => {
   localStorage.setItem('cart', JSON.stringify(items.length > 0 ? items : []));
@@ -15,7 +15,7 @@ export function tallyCart(items: Item[]) {
   }
 }
 
-function CartReducer(state: ApplicationState, action: StateAction): ApplicationState {
+function CartReducer(state: ApplicationState, action: Action): ApplicationState {
   switch (action.type) {
     case ActionTypes.Add:
       const item = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
