@@ -1,31 +1,31 @@
 import { Item } from '../../types';
 import { ActionType } from '../action-types';
 
-export interface AddItemAction {
+interface AddItemAction {
   type: ActionType.ADD;
   payload: Item;
 }
 
-export interface RemoveItemAction {
+interface RemoveItemAction {
   type: ActionType.REMOVE;
   payload: Item;
 }
 
-export interface IncreaseQtyAction {
+interface IncreaseQtyAction {
   type: ActionType.INCREASE;
   payload: Item
 }
 
-export interface DecreaseQtyAction {
+interface DecreaseQtyAction {
   type: ActionType.DECREASE;
   payload: Item;
 }
 
-export interface ClearCartAction {
+interface ClearCartAction {
   type: ActionType.CLEAR;
 }
 
-export interface UpdateCheckoutAction {
+interface UpdateCheckoutAction {
   type: ActionType.CHECKOUT;
   payload: boolean;
 }
