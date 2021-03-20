@@ -29,7 +29,3 @@ export interface ProductItem {
   },
   photo: string
 }
-
-export interface ChildrenProps {
-  children: React.ReactNode
-}

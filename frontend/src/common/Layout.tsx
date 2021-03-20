@@ -1,7 +1,6 @@
 import Navbar from '../components/Navbar';
-import { ChildrenProps } from '../types';
 
-function Layout({ children }: ChildrenProps): JSX.Element {
+const Layout: React.FC = ({ children }): JSX.Element => {
   return (
     <>
       <Navbar />

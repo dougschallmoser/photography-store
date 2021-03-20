@@ -1,6 +1,5 @@
 import { createContext } from 'react';
 import { products } from '../seed';
-import { ChildrenProps } from '../types';
 
 const initialState = {
   products
@@ -8,7 +7,7 @@ const initialState = {
 
 export const ProductsContext = createContext(initialState)
 
-export const ProductsContextProvider = ({ children }: ChildrenProps ) => {
+export const ProductsContextProvider: React.FC = ({ children }) => {
 
   return (
     <ProductsContext.Provider value={{

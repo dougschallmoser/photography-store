@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react';
 import CartReducer, { tallyCart } from './CartReducer';
-import { ApplicationState, Item, ChildrenProps } from '../types';
-
+import { ApplicationState, Item } from '../types';
+import { ActionType } from './action-types';
 
 const storageItems = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : []
 
@@ -14,31 +14,26 @@ const initialState = {
 
 export const CartContext = createContext<ApplicationState>(initialState);
 
-const asyncer = (dispatch: any, state: ApplicationState) => (action: any) =>
-  typeof action === 'function' ? action(dispatch, state) : dispatch(action);
-
-export const CartContextProvider = ({ children }: ChildrenProps ) => {
-  const [state, dispatchBase] = useReducer(CartReducer, initialState)
-
-  const dispatch = asyncer(dispatchBase, state)
+export const CartContextProvider: React.FC = ({ children }) => {
+  const [state, dispatch] = useReducer(CartReducer, initialState)
 
   function addItem(item: Item) {
     dispatch({
-      type: 'ADD_ITEM',
+      type: ActionType.ADD,
       payload: item
     })
   }
   
   function removeItem(item: Item) {
     dispatch({
-      type: 'REMOVE_ITEM',
+      type: ActionType.REMOVE,
       payload: item
     })
   }
 
   function increaseQty(item: Item) {
     dispatch({
-      type: 'INCREASE_QTY',
+      type: ActionType.INCREASE,
       payload: item
     })
   }
@@ -49,24 +44,23 @@ export const CartContextProvider = ({ children }: ChildrenProps ) => {
     }
     
     dispatch({
-      type: 'DECREASE_QTY',
+      type: ActionType.DECREASE,
       payload: item
     })
   }
 
   function clearCart() {
     dispatch({
-      type: 'CLEAR_CART'
+      type: ActionType.CLEAR,
     })
   }
 
   function updateCheckout(bool: boolean) {
     dispatch({
-      type: 'CHECKOUT',
+      type: ActionType.CHECKOUT,
       payload: bool
     })
   }
-
 
   return (
     <CartContext.Provider value={{
