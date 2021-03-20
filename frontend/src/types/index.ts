@@ -1,5 +1,3 @@
-export * from './actions';
-
 export interface ApplicationState {
   cartItems: Item[],
   cartCount: number,

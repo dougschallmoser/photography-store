@@ -1,40 +1,32 @@
-import { Item } from './';
-
-export enum ActionTypes {
-  ADD = 'ADD_ITEM',
-  REMOVE = 'REMOVE_ITEM',
-  INCREASE = 'INCREASE_QTY',
-  DECREASE = 'DECREASE_QTY',
-  CLEAR = 'CLEAR_CART',
-  CHECKOUT = 'CHECKOUT'
-}
+import { Item } from '../../types';
+import { ActionType } from '../action-types';
 
 export interface AddItemAction {
-  type: ActionTypes.ADD;
+  type: ActionType.ADD;
   payload: Item;
 }
 
 export interface RemoveItemAction {
-  type: ActionTypes.REMOVE;
+  type: ActionType.REMOVE;
   payload: Item;
 }
 
 export interface IncreaseQtyAction {
-  type: ActionTypes.INCREASE;
+  type: ActionType.INCREASE;
   payload: Item
 }
 
 export interface DecreaseQtyAction {
-  type: ActionTypes.DECREASE;
+  type: ActionType.DECREASE;
   payload: Item;
 }
 
 export interface ClearCartAction {
-  type: ActionTypes.CLEAR;
+  type: ActionType.CLEAR;
 }
 
 export interface UpdateCheckoutAction {
-  type: ActionTypes.CHECKOUT;
+  type: ActionType.CHECKOUT;
   payload: boolean;
 }
 

@@ -1,4 +1,6 @@
-import { ApplicationState, Action, ActionTypes, Item } from '../types';
+import { ApplicationState, Item } from '../types';
+import { ActionType } from './action-types';
+import { Action } from './actions';
 
 const setStorage = (items: Item[]) => {
   localStorage.setItem('cart', JSON.stringify(items.length > 0 ? items : []));
@@ -17,7 +19,7 @@ export function tallyCart(items: Item[]) {
 
 function CartReducer(state: ApplicationState, action: Action): ApplicationState {
   switch (action.type) {
-    case ActionTypes.ADD:
+    case ActionType.ADD:
       const item = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
 
       if (!item) {
@@ -31,7 +33,7 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.REMOVE:
+    case ActionType.REMOVE:
       const removedItem = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
       state.cartItems.splice(state.cartItems.indexOf(removedItem!), 1)
       
@@ -40,7 +42,7 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.INCREASE:
+    case ActionType.INCREASE:
       state.cartItems.find(item => item.id === action.payload.id)!.quantity++
 
       return {
@@ -48,7 +50,7 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.DECREASE:
+    case ActionType.DECREASE:
       state.cartItems.find(item => item.id === action.payload.id)!.quantity--
 
       return {
@@ -56,13 +58,13 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.CLEAR:
+    case ActionType.CLEAR:
       return {
         ...state,
         ...tallyCart([]),
         cartItems: []
       }
-    case ActionTypes.CHECKOUT:
+    case ActionType.CHECKOUT:
       return {
         ...state,
         checkout: action.payload
