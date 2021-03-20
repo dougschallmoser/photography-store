@@ -17,7 +17,7 @@ export function tallyCart(items: Item[]) {
 
 function CartReducer(state: ApplicationState, action: Action): ApplicationState {
   switch (action.type) {
-    case ActionTypes.Add:
+    case ActionTypes.ADD:
       const item = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
 
       if (!item) {
@@ -31,7 +31,7 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.Remove:
+    case ActionTypes.REMOVE:
       const removedItem = state.cartItems.find(item => item.id === action.payload.id && item.size === action.payload.size)
       state.cartItems.splice(state.cartItems.indexOf(removedItem!), 1)
       
@@ -40,7 +40,7 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.Increase:
+    case ActionTypes.INCREASE:
       state.cartItems.find(item => item.id === action.payload.id)!.quantity++
 
       return {
@@ -48,7 +48,7 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.Decrease:
+    case ActionTypes.DECREASE:
       state.cartItems.find(item => item.id === action.payload.id)!.quantity--
 
       return {
@@ -56,13 +56,13 @@ function CartReducer(state: ApplicationState, action: Action): ApplicationState 
         ...tallyCart(state.cartItems),
         cartItems: [...state.cartItems]
       }
-    case ActionTypes.Clear:
+    case ActionTypes.CLEAR:
       return {
         ...state,
         ...tallyCart([]),
         cartItems: []
       }
-    case ActionTypes.Checkout:
+    case ActionTypes.CHECKOUT:
       return {
         ...state,
         checkout: action.payload
