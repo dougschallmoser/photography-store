@@ -3,7 +3,7 @@ import CartReducer, { tallyCart } from './CartReducer';
 import { ApplicationState, Item } from '../types';
 import { ActionType } from './action-types';
 
-const storageItems = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : []
+const storageItems: Item[] = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')!) : []
 
 const initialState = {
   cartItems: storageItems,
